@@ -3,8 +3,8 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import store from '@/store/index'
+import { computed } from "vue";
+import store from "@/store/index";
 
-const meals = computed(() => store.state.meals)
+const meals = computed(() => store.state.meals);
 </script>
