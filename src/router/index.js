@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import DefaultLayout from '@/components/DefaultLayout.vue';
+import DefaultLayout from "@/components/DefaultLayout.vue";
 import Home from "@/views/Home.vue";
 import MealsByIngredient from "@/views/MealsByIngredient.vue";
 import MealsByLetter from "@/views/MealsByLetter.vue";
@@ -7,7 +7,7 @@ import MealsByName from "@/views/MealsByName.vue";
 
 const routes = [
   {
-    path: '/',
+    path: "/",
     component: DefaultLayout,
     children: [
       {
@@ -19,7 +19,7 @@ const routes = [
         path: "/by-name/:name?",
         name: "byName",
         component: MealsByName,
-      },  
+      },
       {
         path: "/by-letter/:letter?",
         name: "byLetter",
@@ -30,7 +30,7 @@ const routes = [
         name: "byIngredient",
         component: MealsByIngredient,
       },
-    ]
+    ],
   },
 ];
 

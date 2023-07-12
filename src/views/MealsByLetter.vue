@@ -1,7 +1,5 @@
 <template>
-  <div>
-    By Letter
-  </div>
+  <div>By Letter</div>
 </template>
 
 <script setup></script>

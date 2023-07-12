@@ -1,7 +1,5 @@
 <template>
-  <div>
-    By Name
-  </div>
+  <div>By Name</div>
 </template>
 
 <script setup></script>

@@ -1,7 +1,5 @@
 <template>
-  <div>
-    By Ingredients
-  </div>
+  <div>By Ingredients</div>
 </template>
 
 <script setup></script>
