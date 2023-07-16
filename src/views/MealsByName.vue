@@ -7,20 +7,18 @@
       placeholder="Search for Meals"
       @change="searchMeals"
     />
-  </div>
-  <div>
-    {{ meals }}
+    <pre>
+      {{ meals }}
+    </pre>
   </div>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import store from '../store'
 
 const keyword = ref('')
-const meals = computed(() => {
-  store.state.searchMeals
-})
+const meals = computed(() => store.state.searchedMeals)
 
 function searchMeals() {
   store.dispatch('searchMeals', keyword.value)
