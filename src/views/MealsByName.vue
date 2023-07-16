@@ -13,7 +13,7 @@
         :key="meal.idMeal"
         class="bg-white shadow rounded-xl"
       >
-        <router-link :to="{name: 'mealDetails', params: {id: meal.idMeal}}">
+        <router-link :to="{ name: 'mealDetails', params: { id: meal.idMeal } }">
           <img
             :src="meal.strMealThumb"
             alt="strMeal"
@@ -24,11 +24,11 @@
           <h3 class="py-3 font-bold">{{ meal.strMeal }}</h3>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
           <div class="py-3 flex items-center justify-between">
-            <a
-              :href="meal.strYotube"
-              target="_blank"
-              class="px-3 py-2 rounded border-2 border-red-600 bg-red-500 text-white hover:bg-red-600 hover:text-white hover:cursor-pointer transition-colors"
-              >Yotube</a
+            <CustomButton :href="meal.strYoutube" :background="'red'"
+              >YouTube</CustomButton
+            >
+            <CustomButton :href="meal.strSource" :background="'indigo'"
+              >Source</CustomButton
             >
           </div>
         </div>
@@ -41,8 +41,9 @@
 import { computed, onMounted, ref } from "vue";
 import store from "../store";
 import { useRoute } from "vue-router";
+import CustomButton from "../components/CustomButton.vue";
 
-const route = useRoute()
+const route = useRoute();
 
 const keyword = ref("");
 const meals = computed(() => store.state.searchedMeals);
@@ -52,9 +53,9 @@ function searchMeals() {
 }
 
 onMounted(() => {
-  keyword.value = route.params.name
+  keyword.value = route.params.name;
   if (keyword.value) {
-    searchMeals()
+    searchMeals();
   }
-})
+});
 </script>
